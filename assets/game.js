@@ -54,6 +54,7 @@ document.onkeyup = function (event) {
         losses++;
         lossesText.textContent = "Losses: " + losses;
         alert("Sorry you lost");
+        location.reload();
 
     }
 
@@ -61,7 +62,7 @@ document.onkeyup = function (event) {
         wins++;
         winsText.textContent = "Wins: " + wins;
         alert("You won!");
-
+        location.reload();
     }
 
 
