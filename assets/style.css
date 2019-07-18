@@ -20,11 +20,29 @@ h1 {     margin-left: -10px;
 }
 audio {display:none};
 
-p {color:red;
+.text {color:blue;
     font-family:helvetica;
+
 }
-img {    height: 350px;
-    margin-bottom: -210px;
-    margin-left: 475px;}
+img {       height: 350px;
+    margin-bottom: -18%;
+    margin-left: 37.8%;
+}
 
 body {background-color:blue;}
+
+.text {color:blue;
+    font-family:helvetica;
+    
+}
+
+
+
+@media screen and (max-width:600px){
+  img { height: 350px;
+    margin-bottom: -80px;
+    margin-left: 18%;
+}
+
+    h1{font-size:20px;}
+}
