@@ -27,11 +27,18 @@ console.log(psychicGuess);
 
 
 
-//global reset.  invoke in the logic
+//global reset.  invoked in logic. new letter not generating
+var reset = function(){
+    psychicGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
+    console.log(psychicGuess)
+    guessed=[];
+    guessesLeft=9;
+   
 
-
+}
 //user guess not defined? create a users guess variable.  invoke functions here?
 document.onkeyup = function (event) {
+    guessesLeft--;
     guessesSoFarText.textContent = "Your Guesses: " + guessed;
     winsText.textContent = "Wins: " + wins;
     lossesText.textContent = "Losses: " + losses;
@@ -40,7 +47,7 @@ document.onkeyup = function (event) {
 
 
 
-    guessesLeft--;
+    
 
     var userGuess = event.key.toLowerCase();
 
@@ -50,20 +57,22 @@ document.onkeyup = function (event) {
     console.log(userGuess);
 
     //logic .  what else do i need here.  invoke functions? 
-    if (guessesLeft === -2) {
+    if (guessesLeft === 0) {
         losses++;
         lossesText.textContent = "Losses: " + losses;
-        alert("Sorry you lost");
-        location.reload();
-
+        alert("You Died!");
+        audio.play();
+        reset();
     }
 
     if (userGuess === psychicGuess) {
         wins++;
         winsText.textContent = "Wins: " + wins;
-        alert("You won!");
-        location.reload();
-    }
+        alert("Professor Xavier is a Jerk!");
+        var audio = new Audio('assets/x-mentheme.mp3');
+        audio.play();
+         reset();
+        }
 
 
 
