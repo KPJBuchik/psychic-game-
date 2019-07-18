@@ -50,7 +50,7 @@ document.onkeyup = function (event) {
     console.log(userGuess);
 
     //logic .  what else do i need here.  invoke functions? 
-    if (guessesLeft === 0) {
+    if (guessesLeft === -2) {
         losses++;
         lossesText.textContent = "Losses: " + losses;
         alert("Sorry you lost");
