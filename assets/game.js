@@ -6,7 +6,7 @@ var guessed = [];
 
 
 var alphabet = ["a", "b", "c", "d", "e", "f", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-//fill out index.html 
+ 
 var winsText = document.getElementById("wins");
 var lossesText = document.getElementById("losses");
 var guessesLeftText = document.getElementById("guessnumber");
@@ -19,15 +19,7 @@ var psychicGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
 
 console.log(psychicGuess);
 
-
-
-
-//functions to fill out the guesses remaining and letters used.  innertext and innhertml??? push??? where do i invoke this???
-
-
-
-
-//global reset.  invoked in logic. new letter not generating
+//global reset.  invoked in logic
 var reset = function(){
     psychicGuess = alphabet[Math.floor(Math.random() * alphabet.length)];
     console.log(psychicGuess)
@@ -36,7 +28,7 @@ var reset = function(){
    
 
 }
-//user guess not defined? create a users guess variable.  invoke functions here?
+//create a users guess variable.  
 document.onkeyup = function (event) {
     guessesLeft--;
     guessesSoFarText.textContent = "Your Guesses: " + guessed;
@@ -56,12 +48,11 @@ document.onkeyup = function (event) {
 
     console.log(userGuess);
 
-    //logic .  what else do i need here.  invoke functions? 
+    //logic
     if (guessesLeft === 0) {
         losses++;
         lossesText.textContent = "Losses: " + losses;
         alert("You Died!");
-        audio.play();
         reset();
     }
 
@@ -69,9 +60,10 @@ document.onkeyup = function (event) {
         wins++;
         winsText.textContent = "Wins: " + wins;
         alert("Professor Xavier is a Jerk!");
+        //added a song. I'm sorry I can't make it stop.  
         var audio = new Audio('assets/x-mentheme.mp3');
         audio.play();
-         reset();
+        reset();
         }
 
 

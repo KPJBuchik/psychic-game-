@@ -20,7 +20,8 @@ h1 {     margin-left: -10px;
 }
 audio {display:none};
 
-p {color:blue;
+p {color:red;
+    font-family:helvetica;
 }
 img {    height: 350px;
     margin-bottom: -210px;
