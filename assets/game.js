@@ -1,7 +1,7 @@
 //define variables
 var wins = 0;
 var losses = 0;
-var guessesLeft = 9;
+var guessesLeft = 10;
 var guessed = [];
 
 
@@ -59,10 +59,10 @@ document.onkeyup = function (event) {
     if (userGuess === psychicGuess) {
         wins++;
         winsText.textContent = "Wins: " + wins;
-        alert("Professor Xavier is a Jerk!");
-        //added a song. I'm sorry I can't make it stop.  
         var audio = new Audio('assets/x-mentheme.mp3');
         audio.play();
+        alert("Professor Xavier is a Jerk!");
+        //added a song. I'm sorry I can't make it stop.  
         reset();
         }
 
